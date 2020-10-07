@@ -3,6 +3,8 @@ package no.hvl.dat100ptc.oppgave2;
 import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
+//HALLOISEN
+
 public class GPSData {
 
 	private GPSPoint[] gpspoints;
