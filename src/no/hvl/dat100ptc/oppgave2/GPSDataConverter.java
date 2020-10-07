@@ -12,17 +12,22 @@ public class GPSDataConverter {
 	
 	private static int TIME_STARTINDEX = 11; // startindex for tidspunkt i timestr
 
+	public static void main(String[] args) {
+		
+		String test = "2017-08-13T08:52:26.000Z";
+		System.out.println(test.substring(11,13));
+		System.out.println(test.substring(14,16));
+		System.out.println(test.substring(17,19));
+	}
+	
+	//expects input formatted as: 2017-08-13T08:52:26.000Z -> hr = 08, min = 52, sec = 26
 	public static int toSeconds(String timestr) {
 		
-		int secs;
-		int hr, min, sec;
+		int hr = Integer.parseInt(timestr.substring(11, 13));
+		int min = Integer.parseInt(timestr.substring(14, 16));
+		int sec = Integer.parseInt(timestr.substring(17, 19));
 		
-		// TODO
-		// OPPGAVE - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// OPPGAVE - SLUTT
+		return (hr * 3600 + min * 60 + sec);
 		
 	}
 
