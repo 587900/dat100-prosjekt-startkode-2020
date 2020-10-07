@@ -1,7 +1,7 @@
 package no.hvl.dat100ptc.oppgave1;
 
 import no.hvl.dat100ptc.TODO;
-//hei frå Kjetil
+
 public class GPSPoint {
 
 	private int time;
