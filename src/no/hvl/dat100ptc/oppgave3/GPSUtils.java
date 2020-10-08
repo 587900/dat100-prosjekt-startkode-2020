@@ -112,13 +112,16 @@ public class GPSUtils {
 
 	public static String formatDouble(double d) {
 
-		String str;
+		/*String tall = (String.format("%.2f", d));
+		int length = tall.length();
+		
+		for(int i = length + 1; i <= TEXTWIDTH; i++) {
+			
+			tall = " " + tall;
+			
+			return tall;*/
+		}
 
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
 		
 	}
-}
+
