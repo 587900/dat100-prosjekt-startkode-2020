@@ -33,14 +33,20 @@ public class GPSDataConverter {
 
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 
-		GPSPoint gpspoint;
-
-		// TODO - START ;
+		/*
+		int seconds = toSeconds(timeStr);
+		double latitude = Double.parseDouble(latitudeStr);
+		double longitude = Double.parseDouble(longitudeStr);
+		double elevation = Double.parseDouble(elevationStr);
 		
-		throw new UnsupportedOperationException(TODO.method());
+		GPSPoint gpspoint = new GPSPoint(seconds, latitude, longitude, elevation);
 
-		// OPPGAVE - SLUTT ;
-	    
+		return gpspoint;
+		*/
+		
+		return new GPSPoint(toSeconds(timeStr), Double.parseDouble(latitudeStr), 
+				Double.parseDouble(longitudeStr), Double.parseDouble(elevationStr));
+		
 	}
 	
 }

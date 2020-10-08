@@ -6,7 +6,6 @@ import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSUtils {
-	//Hei fra Lima
 
 	public static double findMax(double[] da) {
 
