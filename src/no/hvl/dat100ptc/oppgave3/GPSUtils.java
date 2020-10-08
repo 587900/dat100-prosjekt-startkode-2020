@@ -24,60 +24,75 @@ public class GPSUtils {
 
 	public static double findMin(double[] da) {
 
-		double min;
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUT
+		double min = da[0]; 
+		
+		for (double d : da) {
+			if (d < min) {
+				min = d;
+			}
+		}
+		
+		return min;
 
 	}
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
-		// TODO - START
+		double[] ret = new double[gpspoints.length];
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < gpspoints.length; ++i) {
+			ret[i] = gpspoints[i].getLatitude();
+		}
 		
-		// TODO - SLUTT
+		return ret;
+		
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
+		double[] ret = new double[gpspoints.length];
 		
-		// TODO - SLUTT
-
+		for (int i = 0; i < gpspoints.length; ++i) {
+			ret[i] = gpspoints[i].getLongitude();
+		}
+		
+		return ret;
 	}
 
 	private static int R = 6371000; // jordens radius
 
+	//returns distance in meters
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
-		double d;
-		double latitude1, longitude1, latitude2, longitude2;
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
+		double lat1 = Math.toRadians(gpspoint1.getLatitude());
+		double long1 = Math.toRadians(gpspoint1.getLongitude());
+		
+		double lat2 = Math.toRadians(gpspoint2.getLatitude());
+		double long2 = Math.toRadians(gpspoint2.getLongitude());
+		
+		double deltaLat = lat2 - lat1;
+		double deltaLong = long2 - long1;
+		
+		//a = (sin(deltaLat/2))^2 + cos(lat1)*cos(lat2)*(sin(deltaLong/2))^2
+		
+		double ledd1 = Math.sin(deltaLat/2);
+		double ledd2 = Math.sin(deltaLong/2);
+		
+		//a = ledd1^2 + cos(lat1)*cos(lat2)*ledd2^2 = ledd1*ledd1 + cos(lat1)*cos(lat2)*ledd2*ledd2 
+		double a = ledd1*ledd1 + Math.cos(lat1)*Math.cos(lat2)*ledd2*ledd2;
+		
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		return R * c;
 
 	}
 
+	//return in km/h
 	public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
-		int secs;
-		double speed;
+		double distance = distance(gpspoint1, gpspoint2);
+		int deltaTime = gpspoint2.getTime() - gpspoint1.getTime();
 
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
+		return (distance / deltaTime) * 3.6;	//meters_per_second * 3.6
 
 	}
 
