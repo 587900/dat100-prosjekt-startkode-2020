@@ -1,8 +1,7 @@
 package no.hvl.dat100ptc.oppgave3;
 
-import static java.lang.Math.*;
+import java.util.Locale;
 
-import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSUtils {
@@ -98,27 +97,24 @@ public class GPSUtils {
 
 	public static String formatTime(int secs) {
 
-		String timestr;
-		String TIMESEP = ":";
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
+		int hh = secs / 3600;
+		int mm = secs % 3600 / 60;
+		int ss = secs % 60;	//samme som: secs % 3600 % 60
 		
-		// TODO - SLUTT
+		return String.format("  %02d:%02d:%02d", hh, mm, ss);
 
 	}
 	private static int TEXTWIDTH = 10;
 
 	public static String formatDouble(double d) {
 
-		String str;
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
+		//eit problem på min PC, fekk "," i staden for ".". Måtte bruke Locale.US
+		String tall = String.format(Locale.US, "%.2f", d);
+		String mellomrom = "";
+		
+		while (mellomrom.length() + tall.length() < TEXTWIDTH) mellomrom += " ";
+		
+		return mellomrom + tall;
 		
 	}
 }
