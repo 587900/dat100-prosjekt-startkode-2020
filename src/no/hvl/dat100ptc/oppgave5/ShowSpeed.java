@@ -41,6 +41,7 @@ public class ShowSpeed extends EasyGraphics {
 		showSpeedProfile(MARGIN + BARHEIGHT,N);
 	}
 	
+	//5b)
 	public void showSpeedProfile(int ybase, int N) {
 
 		// get segments speeds from the GPS computer object
@@ -50,7 +51,7 @@ public class ShowSpeed extends EasyGraphics {
 		
 		setColor(0, 255, 0);
 		
-		int avgSpeedLine = ybase - (int)gpscomputer.averageSpeed();;
+		int avgSpeedLine = ybase - (int)gpscomputer.averageSpeed();
 		drawLine(MARGIN, avgSpeedLine, MARGIN + 2*(speeds.length-1), avgSpeedLine);
 
 		setColor(0, 0, 255);

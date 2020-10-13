@@ -8,6 +8,7 @@ public class GPSData {
 	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
+	//2b)
 	public GPSData(int n) {
 		gpspoints = new GPSPoint[n];
 		antall = 0;
@@ -17,6 +18,7 @@ public class GPSData {
 		return this.gpspoints;
 	}
 	
+	//2b)
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
 		//viss full return false
@@ -31,6 +33,7 @@ public class GPSData {
 		return true;
 	}
 
+	//2b)
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
 		/*
@@ -41,6 +44,7 @@ public class GPSData {
 		
 	}
 
+	//2b)
 	public void print() {
 
 		System.out.println("====== Konvertert GPS Data - START ======");

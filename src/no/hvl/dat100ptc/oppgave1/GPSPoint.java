@@ -4,6 +4,7 @@ import no.hvl.dat100ptc.TODO;
 
 public class GPSPoint {
 
+	//1a)
 	private int time;
 	private double latitude;
 	private double longitude;
@@ -16,57 +17,41 @@ public class GPSPoint {
 		this.elevation = elevation;
 	}
 
-	// TODO - get/set metoder
+	//1b) - get/set
 	public int getTime() {
-		
 		return time;
-		
 	}
 
-	public void setTime(int time) {
-				
+	public void setTime(int time) {	
 		this.time = time;
-
 	}
 
 	public double getLatitude() {
-		
 		return latitude;
 	}
 
 	public void setLatitude(double latitude) {
-		
 		this.latitude = latitude;
-		
 	}
 
 	public double getLongitude() {
-		
 		return longitude;
-		
 	}
 
 	public void setLongitude(double longitude) {
-		
 		this.longitude = longitude;
-		
 	}
 
 	public double getElevation() {
-		
 		return elevation;
-		
 	}
 
 	public void setElevation(double elevation) {
-		
 		this.elevation = elevation;
-		
 	}
 	
+	//1c)
 	public String toString() {
-		
 		return time + " (" + latitude + "," + longitude + ") " + elevation + "\n";
-			
 	}
 }

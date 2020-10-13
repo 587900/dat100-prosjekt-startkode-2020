@@ -21,8 +21,9 @@ public class GPSUtils {
 		return max;
 	}
 
+	//3a)
 	public static double findMin(double[] da) {
-
+		
 		double min = da[0]; 
 		
 		for (double d : da) {
@@ -35,6 +36,7 @@ public class GPSUtils {
 
 	}
 
+	//3b)
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
 		double[] ret = new double[gpspoints.length];
@@ -47,6 +49,7 @@ public class GPSUtils {
 		
 	}
 
+	//3c)
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
 		double[] ret = new double[gpspoints.length];
@@ -60,6 +63,7 @@ public class GPSUtils {
 
 	private static int R = 6371000; // jordens radius
 
+	//3d)
 	//returns distance in meters
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
@@ -85,6 +89,7 @@ public class GPSUtils {
 
 	}
 
+	//3e)
 	//return in km/h
 	public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
@@ -95,6 +100,7 @@ public class GPSUtils {
 
 	}
 
+	//3f)
 	public static String formatTime(int secs) {
 
 		int hh = secs / 3600;
@@ -106,6 +112,7 @@ public class GPSUtils {
 	}
 	private static int TEXTWIDTH = 10;
 
+	//3g)
 	public static String formatDouble(double d) {
 
 		//eit problem, fekk "," i staden for ".". Måtte bruke Locale.US

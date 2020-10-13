@@ -11,15 +11,8 @@ public class GPSDataConverter {
     // skal omregnes til sekunder (som int): 8 * 60 * 60 + 52 * 60 + 26 
 	
 	private static int TIME_STARTINDEX = 11; // startindex for tidspunkt i timestr
-
-	public static void main(String[] args) {
-		
-		String test = "2017-08-13T08:52:26.000Z";
-		System.out.println(test.substring(11,13));
-		System.out.println(test.substring(14,16));
-		System.out.println(test.substring(17,19));
-	}
 	
+	//2a)
 	//expects input formatted as: 2017-08-13T08:52:26.000Z -> hr = 08, min = 52, sec = 26
 	public static int toSeconds(String timestr) {
 		
@@ -31,6 +24,7 @@ public class GPSDataConverter {
 		
 	}
 
+	//2a)
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 
 		/*

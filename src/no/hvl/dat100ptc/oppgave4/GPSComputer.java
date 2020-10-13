@@ -26,6 +26,7 @@ public class GPSComputer {
 		return this.gpspoints;
 	}
 	
+	//4a)
 	// beregn total distances (i meter)
 	public double totalDistance() {
 
@@ -33,20 +34,20 @@ public class GPSComputer {
 
 		for (int i = 1; i<gpspoints.length; i++) {
 			distance += GPSUtils.distance(gpspoints[i], gpspoints[i-1]);
-			
 		}
 		
 		return distance;
 
 	}
 
+	//4b)
 	// beregn totale høydemeter (i meter)
 	public double totalElevation() {
 
 		double elevation = 0;
 
 		for (int i = 1; i<gpspoints.length; i++) {
-			if (gpspoints[i].getElevation()>gpspoints[i-1].getElevation()) {
+			if (gpspoints[i].getElevation() > gpspoints[i-1].getElevation()) {
 				elevation += gpspoints[i].getElevation()-gpspoints[i-1].getElevation();
 			}
 		}
@@ -54,18 +55,19 @@ public class GPSComputer {
 
 	}
 
+	//4c)
 	// beregn total tiden for hele turen (i sekunder)
 	public int totalTime() {
 		
 		if (gpspoints.length == 0) {
 			return 0;
 		}
-		return gpspoints[gpspoints.length-1].getTime()-gpspoints[0].getTime();		
+		return gpspoints[gpspoints.length-1].getTime() - gpspoints[0].getTime();		
 
 	}
 		
+	//4d)
 	// beregn gjennomsnitshastighets mellom hver av gps punktene
-
 	public double[] speeds() {
 		
 		if (gpspoints.length == 0) {
@@ -84,12 +86,12 @@ public class GPSComputer {
 
 	}
 	
+	//4e)
 	public double maxSpeed() {
-		
 		return GPSUtils.findMax(speeds());
-		
 	}
 
+	//4f)
 	public double averageSpeed() {
 
 		return (totalDistance() / totalTime()) * 3.6;
@@ -108,6 +110,7 @@ public class GPSComputer {
 	// conversion factor m/s to miles per hour
 	public static double MS = 2.236936;
 
+	//4g)
 	// beregn kcal gitt weight og tid der kjøres med en gitt hastighet
 	public double kcal(double weight, int secs, double speed) {
 
@@ -136,6 +139,7 @@ public class GPSComputer {
 		
 	}
 
+	//4h)
 	public double totalKcal(double weight) {
 
 		double totalkcal = 0;
@@ -154,6 +158,7 @@ public class GPSComputer {
 	
 	private static double WEIGHT = 80.0;
 	
+	//4i)
 	public void displayStatistics() {
 
 		System.out.println("==============================================");

@@ -41,6 +41,7 @@ public class ShowProfile extends EasyGraphics {
 		showHeightProfile(MARGIN + MAXBARHEIGHT); 
 	}
 
+	//5a)
 	public void showHeightProfile(int ybase) {
 
 		// ybase indicates the position on the y-axis where the columns should start
