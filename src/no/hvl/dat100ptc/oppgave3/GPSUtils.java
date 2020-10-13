@@ -108,23 +108,31 @@ public class GPSUtils {
 
 	public static String formatDouble(double d) {
 
+
 		//eit problem på min PC, fekk "," i staden for ".". Måtte bruke Locale.US
 		
-		/*String tall = String.format(Locale.US, "%.2f", d);
+		String tall = String.format(Locale.US, "%.2f", d);
 		String mellomrom = "";
 		
 		while (mellomrom.length() + tall.length() < TEXTWIDTH) mellomrom += " ";
 		
-		return mellomrom + tall;*/
+		return mellomrom + tall;
+
+		//eit problem, fekk "," i staden for ".". Måtte bruke Locale.US
+		//1$10 = length 10, .2 = 2 desimaler, %f = flyttal
 		
-		String tall = (String.format(Locale.US, "%.2f", d));
+		
+		//return String.format(Locale.US, "%1$" + TEXTWIDTH + ".2f", d);
+		
+		/*String tall = (String.format(Locale.US, "%.2f", d));
+		
 		int length = tall.length();
 		
 		for(int i = length + 1; i <= TEXTWIDTH; i++) {
 			
 			tall = " " + tall;
-		}
-		return tall;
+		
+		return tall;*/
 		
 	}
 	
