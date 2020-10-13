@@ -111,18 +111,18 @@ public class GPSUtils {
 
 		//eit problem på min PC, fekk "," i staden for ".". Måtte bruke Locale.US
 		
-		String tall = String.format(Locale.US, "%.2f", d);
+		/*String tall = String.format(Locale.US, "%.2f", d);
 		String mellomrom = "";
 		
 		while (mellomrom.length() + tall.length() < TEXTWIDTH) mellomrom += " ";
 		
-		return mellomrom + tall;
+		return mellomrom + tall;*/
 
 		//eit problem, fekk "," i staden for ".". Måtte bruke Locale.US
 		//1$10 = length 10, .2 = 2 desimaler, %f = flyttal
 		
 		
-		//return String.format(Locale.US, "%1$" + TEXTWIDTH + ".2f", d);
+		return String.format(Locale.US, "%1$" + TEXTWIDTH + ".2f", d);
 		
 		/*String tall = (String.format(Locale.US, "%.2f", d));
 		
