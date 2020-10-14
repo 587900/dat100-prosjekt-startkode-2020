@@ -135,7 +135,7 @@ public class GPSComputer {
 		}
 		else met = 16.0;
 		
-		return weight * secs / 3600 * met; 
+		return weight * secs / 3600 * met;
 		
 	}
 
