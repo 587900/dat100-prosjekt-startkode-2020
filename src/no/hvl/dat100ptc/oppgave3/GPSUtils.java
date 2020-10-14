@@ -143,5 +143,24 @@ public class GPSUtils {
 		
 	}
 	
+	//for 6c)
+	public static double[] arrayExtend(double[] arr) {
+		double[] ret = new double[arr.length+1];
+		System.arraycopy(arr, 0, ret, 1, arr.length);
+		return ret;
+	}
+	
+	//for 6c)
+	public static double average(double[] arr) {
+		return sum(arr) / arr.length;
+	}
+	
+	//for 6c)
+	public static double sum(double[] arr) {
+		double sum = 0;
+		for (double d : arr) sum += d;
+		return sum;
+	}
+	
 }
 

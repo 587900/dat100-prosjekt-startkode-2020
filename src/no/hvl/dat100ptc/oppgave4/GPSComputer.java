@@ -171,6 +171,60 @@ public class GPSComputer {
 		System.out.println("==============================================");
 		
 	}
+	
+	//6a)
+	//usikker - climb = deltaElevation / distance * 100 ?
+	//climb = grader / 90 * 100?
+	public double[] climbs() {
+		
+		double[] climbs = new double[gpspoints.length-1];
+		
+		for (int i = 1; i < climbs.length; ++i) {
+			double deltaElevation = gpspoints[i+1].getElevation() - gpspoints[i].getElevation();
+			double distance = GPSUtils.distance(gpspoints[i], gpspoints[i+1]);
+			//climbs[i] = deltaElevation / distance * 100;
+			climbs[i] = Math.atan(deltaElevation / distance) / (Math.PI / 2) * 100;
+		}
+		
+		return climbs;
+		
+	}
+	
+	//6a)
+	public double maxClimb() {
+		return GPSUtils.findMax(climbs());
+	}
+	
+	//6c) nedanfor
+	public double[] times() {	//double for enkel tilgang til GPSUtils-funksjonar
+		double[] ret = new double[gpspoints.length-1];
+		for (int i = 0; i < ret.length; ++i) ret[i] = gpspoints[i+1].getTime() - gpspoints[i].getTime();
+		return ret;
+	}
+	
+	public double[] distances() {
+		double[] ret = new double[gpspoints.length-1];
+		for (int i = 0; i < ret.length; ++i) ret[i] = GPSUtils.distance(gpspoints[i], gpspoints[i+1]);
+		return ret;
+	}
+	
+	public double[] getElevations() {
+		//double[] ret = new double[gpspoints.length-1];
+		//for (int i = 0; i < ret.length; ++i) ret[i] = gpspoints[i+1].getElevation() - gpspoints[i].getElevation();
+		double[] ret = new double[gpspoints.length];
+		for (int i = 0; i < ret.length; ++i) ret[i] = gpspoints[i].getElevation();
+		return ret;
+	}
+	
+	public double[] kcals(int weight) {
+		double[] ret = new double[gpspoints.length-1];
+		for (int i = 0; i < ret.length; ++i) {
+			int secs = gpspoints[i+1].getTime() - gpspoints[i].getTime();
+			double speed = GPSUtils.speed(gpspoints[i], gpspoints[i+1]);
+			ret[i] = kcal(weight, secs, speed);
+		}
+		return ret;
+	}
 
 }
 
